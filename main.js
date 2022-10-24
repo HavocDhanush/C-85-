@@ -37,3 +37,91 @@ function new_Image (get_Image) {
      canvas.add(block_img_object);
     });
 }
+
+window.addEventListener("keydown" , my_keydown);
+
+function my_keydown(e) {
+    keyPressed = e.keyCode;
+    console.log(keyPressed);
+
+    if (e.shiftKey == true && keyPressed == '80') {
+        console.log("shift and p pressed together");
+        block_img_height = block_img_height + 10;
+        block_img_width = block_img_width + 10;
+        document.getElementById("current_height").innerHTML = block_img_height;
+        document.getElementById("current_width").innerHTML = block_img_width;
+    }
+
+    if (e.shiftKey == true && keyPressed == '77') {
+        console.log("shift and m pressed together");
+        block_img_height = block_img_height - 10;
+        block_img_width = block_img_width - 10;
+        document.getElementById("current_height").innerHTML = block_img_height;
+        document.getElementById("current_width").innerHTML = block_img_width;
+    }
+
+    if (keyPressed == '37') {
+        console.log("left");
+        left();
+    }
+
+    if (keyPressed == '38') {
+        console.log("up");
+        up();
+    }
+
+    if (keyPressed == '39') {
+        console.log("right");
+        right();
+    }
+
+    if (keyPressed == '40') {
+        console.log("down");
+        down();
+    }
+
+    if (keyPressed == '87') {
+        console.log("w");
+        new_Image('wall.jpg');
+    }
+
+    if (keyPressed == '71') {
+        console.log("g");
+        new_Image('ground.png');
+    }
+
+    if (keyPressed == '76') {
+        console.log("l");
+        new_Image('light_green.png');
+    }
+
+    if (keyPressed == '84') {
+        console.log("t");
+        new_Image('trunk.jpg');
+    }
+
+    if (keyPressed == '82') {
+        console.log("r");
+        new_Image('roof.jpg');
+    }
+    
+    if (keyPressed == '89') {
+        console.log("y");
+        new_Image('yellow_wall.png');
+    }
+
+    if (keyPressed == '68') {
+        console.log("d");
+        new_Image('dark_green.png');
+    }
+
+    if (keyPressed == '85') {
+        console.log("u");
+        new_Image('unique.png');
+    }
+
+    if (keyPressed == '67') {
+        console.log("c");
+        new_Image('cloud.jpg');
+    }
+}
